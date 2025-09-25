@@ -38,17 +38,27 @@ export const signUp = async (params: AuthCredentials) => {
       universityId,
     });
 
+    // Build robust base URL for workflow trigger
+    const hdrs = await headers();
+    const origin =
+      hdrs.get("origin") ||
+      config.env.apiEndpoint ||
+      config.env.prodApiEndpoint ||
+      "http://localhost:3000";
+
     // Trigger email workflow asynchronously - don't wait for it
-    workflowClient.trigger({
-      url: `${config.env.prodApiEndpoint}/api/workflows`,
-      body: {
-        email,
-        fullName,
-      }
-    }).catch((workflowError) => {
-      console.error("Workflow trigger failed:", workflowError);
-      // Don't fail the signup if email workflow fails
-    });
+    workflowClient
+      .trigger({
+        url: `${origin}/api/workflows`,
+        body: {
+          email,
+          fullName,
+        },
+      })
+      .catch((workflowError) => {
+        console.error("Workflow trigger failed:", workflowError);
+        // Don't fail the signup if email workflow fails
+      });
 
     return { success: true, email, password }; // send back email/password to client
   } catch (error: any) {
