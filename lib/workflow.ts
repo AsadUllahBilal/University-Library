@@ -27,7 +27,7 @@ export const sendEmail = async ({
     },
     body: {
       from: "Asad <onboarding@resend.dev>",
-      to: email,
+      to: [email],
       subject,
       html: message,
     },
