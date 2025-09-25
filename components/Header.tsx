@@ -40,12 +40,12 @@ const Header = ({ session }: { session: Session | null }) => {
                   {getInitials(session?.user?.name || "")}
                 </AvatarFallback>
               </Avatar>
+              <span className='cursor-pointer' onClick={() => signOut()}>
+                <LogOut className='text-red-500'/>
+              </span>
             </Link>
           </li>
         )}
-        <li className='cursor-pointer' onClick={() => signOut()}>
-          <LogOut className='text-red-500'/>
-        </li>
       </ul>
     </header>
   );
