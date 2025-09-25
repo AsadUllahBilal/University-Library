@@ -1,11 +1,8 @@
 import BookList from "@/components/BookList";
 import BookOverview from "@/components/BookOverview";
 import { sampleBooks } from "@/constants";
-import { db } from "@/database/drizzle";
-import { users } from "@/database/schema"
 
 export default async function Home() {
-  
   return (
     <>
       <BookOverview {...sampleBooks[0]}/>

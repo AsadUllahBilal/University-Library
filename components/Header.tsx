@@ -7,6 +7,8 @@ import { usePathname } from 'next/navigation';
 import React from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Session } from 'next-auth';
+import { LogOut } from 'lucide-react';
+import { signOut } from 'next-auth/react';
 
 const Header = ({ session }: { session: Session | null }) => {
   const pathname = usePathname();
@@ -38,10 +40,12 @@ const Header = ({ session }: { session: Session | null }) => {
                   {getInitials(session?.user?.name || "")}
                 </AvatarFallback>
               </Avatar>
-              <span className='text-light-200 font-medium'>{session?.user?.name}</span>
             </Link>
           </li>
         )}
+        <li className='cursor-pointer' onClick={() => signOut()}>
+          <LogOut className='text-red-500'/>
+        </li>
       </ul>
     </header>
   );

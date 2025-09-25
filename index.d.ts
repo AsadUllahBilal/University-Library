@@ -1,18 +1,17 @@
-interface Book {
-  id: string;
+type Book = {
+  id: number;
   title: string;
   author: string;
   genre: string;
   rating: number;
-  totalCopies: number;
-  availableCopies: number;
+  total_copies: number;
+  available_copies: number;
+  color: string;
+  cover: string;
   description: string;
-  coverColor: string;
-  coverUrl: string;
-  videoUrl: string;
+  video: string;
   summary: string;
-  createdAt: Date | null;
-}
+};
 
 interface AuthCredentials {
   fullName: string;
