@@ -22,15 +22,14 @@ The app features **secure authentication**, **role-based access**, and a **clean
 ### 🔐 Authentication System
 - Secure **Sign Up / Sign In** with **NextAuth.js**
 - **Role-based access control** (Admin / User)
-- Users can view and update their **profile information**
 
 ---
 
 ### 🏠 Pages Overview
 - **Home Page** → A welcoming dashboard introducing the library.  
-- **Library Page** → Displays available books with the option to **borrow** (if user is approved).  
+- **Library Page** → Displays available books with the **Search Bar**.  
 - **Book Details Page** → Detailed view of each book (title, author, category, availability).  
-- **Profile Page** → Displays user details and borrowing history.  
+- **Profile Page** → Displays user details and borrowing history.
 
 ---
 
