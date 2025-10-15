@@ -33,6 +33,7 @@ const authOptions: NextAuthOptions = {
                     id: user[0].id.toString(),
                     email: user[0].email,
                     name: user[0].fullName,
+                    role: user[0].role,
                 } as User;
             }
         })
@@ -45,6 +46,7 @@ const authOptions: NextAuthOptions = {
             if(user) {
                 token.id = user.id;
                 token.name = user.name;
+                token.role = (user as any).role;
             }
 
             return token;
@@ -53,6 +55,7 @@ const authOptions: NextAuthOptions = {
             if(session.user) {
                 session.user.id = token.id as string;
                 session.user.name = token.name as string;
+                (session.user as any).role = token.role as string;
             }
 
             return session;

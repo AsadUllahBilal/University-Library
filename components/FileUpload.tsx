@@ -84,7 +84,7 @@ const FileUpload = ({
       />
 
       <Button
-        className="bg-[#232839] w-full h-14 text-[18px] cursor-pointer py-3 hover:bg-[#232839] text-light-100"
+        className={variant === "dark" ? "bg-[#232839] w-full h-14 text-[18px] cursor-pointer py-3 hover:bg-[#232839] text-light-100" : "bg-white w-full h-14 text-[18px] cursor-pointer py-3 hover:bg-white font-normal text-dark-200"}
         size={"lg"}
         onClick={(e) => {
           e.preventDefault();

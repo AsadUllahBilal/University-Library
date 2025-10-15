@@ -11,7 +11,7 @@ import {
 } from "react-hook-form";
 import { ZodType } from "zod";
 import FileUpload from "./FileUpload";
-import { LoaderCircle } from "lucide-react"
+import { LoaderCircle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -58,26 +58,39 @@ const AuthForm = <T extends FieldValues>({
       const result = await onSubmit(data);
 
       if (result.success) {
-        toast("Success", {
-          description: isSignIn ? "User Sign In Successfully" : "User Sign up Successfully"
+        toast.success("Success", {
+          description: isSignIn
+            ? "User Sign In Successfully"
+            : "User Sign up Successfully",
+          style: {
+            background: "#059669",
+            color: "white",
+          },
         });
-        
+
         // Redirect after successful authentication
         router.push("/");
       } else {
-        toast(`Error ${isSignIn ? "signing in" : "signing up"}`, {
+        toast.error(`Error ${isSignIn ? "signing in" : "signing up"}`, {
           description: result.error ?? "An error occurred.",
+          style: {
+            background: "#dc2626",
+            color: "white",
+          },
         });
       }
     } catch (error) {
-      toast(`Error ${isSignIn ? "signing in" : "signing up"}`, {
+      toast.error(`Error ${isSignIn ? "signing in" : "signing up"}`, {
         description: "An unexpected error occurred.",
+        style: {
+          background: "#dc2626",
+          color: "white",
+        },
       });
     } finally {
       setLoading(false);
     }
   };
-
 
   return (
     <div className="flex flex-col gap-4">
@@ -132,14 +145,21 @@ const AuthForm = <T extends FieldValues>({
           ))}
 
           {loading ? (
-            <Button disabled type="submit" className="form-btn font-bold text-xl font-arial">
+            <Button
+              disabled
+              type="submit"
+              className="form-btn font-bold text-xl font-arial"
+            >
               <LoaderCircle className="animate-spin" />
-            {isSignIn ? "Sign In" : "Sign Up"}
-          </Button>
+              {isSignIn ? "Sign In" : "Sign Up"}
+            </Button>
           ) : (
-            <Button type="submit" className="form-btn font-bold text-xl font-arial">
-            {isSignIn ? "Sign In" : "Sign Up"}
-          </Button>
+            <Button
+              type="submit"
+              className="form-btn font-bold text-xl font-arial"
+            >
+              {isSignIn ? "Sign In" : "Sign Up"}
+            </Button>
           )}
         </form>
       </Form>

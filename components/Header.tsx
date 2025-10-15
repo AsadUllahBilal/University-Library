@@ -32,6 +32,8 @@ const Header = ({ session }: { session: Session | null }) => {
           </Link>
         </li>
 
+        
+
         {session && (
           <li>
             <Link href="/my-profile" className='flex items-center justify-center gap-2'>

@@ -1,17 +1,18 @@
-type Book = {
-  id: number;
+interface Book {
+  id: string;
   title: string;
   author: string;
   genre: string;
   rating: number;
-  total_copies: number;
-  available_copies: number;
-  color: string;
-  cover: string;
+  totalCopies: number;
+  availableCopies: number;
   description: string;
-  video: string;
+  coverColor: string;
+  coverUrl: string;
+  videoUrl: string;
   summary: string;
-};
+  createdAt: Date | null;
+}
 
 interface AuthCredentials {
   fullName: string;
@@ -22,6 +23,20 @@ interface AuthCredentials {
 }
 
 interface BookParams {
+  title: string;
+  author: string;
+  genre: string;
+  rating: number;
+  coverUrl: string;
+  coverColor: string;
+  description: string;
+  totalCopies: number;
+  videoUrl: string;
+  summary: string;
+}
+
+interface EditBookParams {
+  id: string;
   title: string;
   author: string;
   genre: string;
