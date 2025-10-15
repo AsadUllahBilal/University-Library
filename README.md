@@ -64,5 +64,5 @@ Accessible **only to admins** for full control over the system.
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/yourusername/bookwise-lms.git
-cd bookwise-lms
+git clone [https://github.com/yourusername/bookwise-lms.git](https://github.com/AsadUllahBilal/University-Library.git)
+cd University-Library
