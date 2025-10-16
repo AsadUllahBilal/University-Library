@@ -32,7 +32,6 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   };
 }
 
-// ✅ Page component
 const Page = async ({ params }: { params: { id: string } }) => {
   const id = params.id;
   const session: Session | null = await getServerSession(authOptions);

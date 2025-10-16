@@ -90,15 +90,15 @@ const LibraryPage = ({ bookData }: Props) => {
   }, [debouncedQuery, page]);
 
   return (
-    <section className="w-full p-4 flex flex-col items-center gap-4">
-      <p className="text-[#D6E0FF] uppercase text-[20px] font-medium">
+    <section className="w-[90vw] p-4 flex flex-col items-center gap-4">
+      <p className="text-[#D6E0FF] uppercase lib-f:text-[20px] text-[16px] font-medium">
         Discover Your Next Great Read:
       </p>
-      <h1 className="text-5xl font-bold text-center text-white capitalize w-[600px]">
+      <h1 className="lib-f:text-5xl text-3xl font-bold text-center text-white capitalize w-full lib-f:w-[600px]">
         Explore and Search for Any Book In Our Library
       </h1>
 
-      <div className="relative w-[600px] flex h-10 gap-2">
+      <div className="relative w-full lib-f:w-[600px] flex h-10 gap-2">
         <Input
           placeholder="Search Any Book"
           className="border-none outline-none w-full h-full bg-[#232839] text-white focus:outline-none px-3"

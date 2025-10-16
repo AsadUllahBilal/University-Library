@@ -54,7 +54,7 @@ export default async function RootLayout({
 
   return (
     <main
-      className="flex min-h-screen flex-1 flex-col px-10 md:px-16 bg-dark-100 bg-cover bg-top text-white"
+      className="flex min-h-screen flex-1 flex-col px-4 prof-s:px-10 md:px-16 bg-dark-100 bg-cover object-cover bg-top text-white"
       style={{ backgroundImage: "url('/images/pattern.webp')" }}
     >
       <div className="mx-auto max-w-7xl">

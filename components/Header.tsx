@@ -14,7 +14,7 @@ const Header = ({ session }: { session: Session | null }) => {
   const pathname = usePathname();
 
   return (
-    <header className='my-10 flex justify-between gap-5'>
+    <header className='w-full my-10 flex justify-between gap-5'>
       <Link href="/">
         <Image src="/icons/logo.svg" alt='logo' width={40} height={40} />
       </Link>

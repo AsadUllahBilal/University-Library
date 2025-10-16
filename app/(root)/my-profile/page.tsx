@@ -57,10 +57,10 @@ const page = async () => {
   const isVerified = user.status === 'APPROVED';
 
   return (
-    <section className='w-[1280px] min-h-screen p-5 flex flex-wrap items-start justify-center gap-10'>
-      <div className='gradient-vertical min-h-[20vh] rounded-2xl pb-10 px-10 pt-20 relative'>
+    <section className='w-[90vw] min-h-screen flex flex-wrap items-start justify-center prof-f:justify-between'>
+      <div className='gradient-vertical min-h-[20vh] w-full prof-s:w-[500px] rounded-2xl pb-10 px-10 pt-20 relative'>
         <Image src={Frame} alt='Frame Image' className='absolute -top-8 left-[45%]' />
-        <div className='flex items-center gap-5'>
+        <div className='flex items-center flex-wrap gap-5 w-full'>
             <div className='w-[150px] h-[150px] rounded-full grid place-items-center bg-[#0C8CE9] font-bebas-neue text-black text-6xl border-8 border-[#24293c]'>
               {getInitials(user.fullName)}
             </div>
@@ -77,7 +77,7 @@ const page = async () => {
               <p className='text-gray-300'>{user.email}</p>
             </div>
         </div>
-        <div className='mt-6 space-y-4'>
+        <div className='mt-6 w-full flex flex-col gap-6'>
           <div>
             <p className='text-gray-300'>University</p>
             <h1 className='text-2xl text-light-100'>Bookwise</h1>
@@ -93,12 +93,12 @@ const page = async () => {
             height={300}
             alt="Univeristy Card"
             urlEndpoint={config.env.imagekit.urlEndpoint}
-            className='rounded-2xl'
+            className='rounded-2xl max-w-full h-auto'
             />
           </div>
         </div>
       </div>
-      <div className='w-1/2'>
+      <div className='w-full prof-f:w-1/2 mt-5 prof-f:mt-0'>
         <h1 className='text-3xl font-medium'>Borrowed Books</h1>
           <BorrowedBookCard userId={session?.user?.id as string} />
       </div>

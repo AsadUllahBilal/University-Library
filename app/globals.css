@@ -3,6 +3,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --breakpoint-prof-f: 1114px;
+  --breakpoint-prof-s: 554px;
+  --breakpoint-lib-f: 626px;
+}
+
 .gradient-vertical {
   background: linear-gradient(180deg, #12141d 0%, #12151f 100%);
 }
